@@ -21,8 +21,6 @@ const SaveRule = async (rule: Rule) => {
 export const RuleEditor: React.FunctionComponent<Props> = (props) => {
   const [state, setState] = useState<EditorState>(props.rule);
 
-  console.log("edit:", state.Rules.id, state.Name);
-
   return (
     <Card style={{ backgroundColor: "#5484D3", borderRadius: "15px" }}>
       <div>

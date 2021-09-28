@@ -3,11 +3,10 @@ import { useSelector } from "react-redux";
 import { StoreState } from "../store";
 
 import { Card } from "antd";
-//import RuleBuilder from "../rulebuilder/builder";
 import { RuleEditor } from "../rulebuilder/ruleeditor";
 
 import { useParams } from "react-router";
-import { newRule } from "../rulebuilder/init_value";
+//import { newRule } from "../rulebuilder/init_value";
 import { Rule } from "../domain/rule";
 
 const mapRule = (rule: Rule, label: string | JSX.Element) => {
@@ -28,8 +27,8 @@ const View: React.FunctionComponent<{}> = () => {
   const { rules, isLoading } = useSelector((s: StoreState) => s.rules);
   const { id } = useParams<{ id: string }>();
 
-  const nr = newRule();
-  const create = mapRule(nr, "New Rule");
+  // const nr = newRule();
+  // const create = mapRule(nr, "New Rule");
   const ruleList = Object.keys(rules)
     .sort()
     .map((k, i) =>
@@ -46,7 +45,6 @@ const View: React.FunctionComponent<{}> = () => {
     return <div>Loading...</div>;
   }
 
-  //const ol = [create].concat(ruleList);
   const ol = ruleList;
 
   const r = rules[id];
