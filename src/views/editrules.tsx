@@ -3,10 +3,11 @@ import { useSelector } from "react-redux";
 import { StoreState } from "../store";
 
 import { Card } from "antd";
-import RuleBuilder from "../rulebuilder/builder";
+//import RuleBuilder from "../rulebuilder/builder";
+import { RuleEditor } from "../rulebuilder/ruleeditor";
+
 import { useParams } from "react-router";
 import { newRule } from "../rulebuilder/init_value";
-import { JsonGroup } from "react-awesome-query-builder";
 import { Rule } from "../domain/rule";
 
 const mapRule = (rule: Rule, label: string | JSX.Element) => {
@@ -24,22 +25,34 @@ const mapRule = (rule: Rule, label: string | JSX.Element) => {
 };
 
 const View: React.FunctionComponent<{}> = () => {
-  const rules = useSelector((s: StoreState) => s.rules.rules);
+  const { rules, isLoading } = useSelector((s: StoreState) => s.rules);
   const { id } = useParams<{ id: string }>();
 
   const nr = newRule();
   const create = mapRule(nr, "New Rule");
   const ruleList = Object.keys(rules)
     .sort()
-    .map((k, i) => mapRule(rules[k], <h2>{`Rule ${i + 1}`}</h2>));
+    .map((k, i) =>
+      mapRule(
+        rules[k],
+        <h2>
+          {`Rule ${i + 1}`}
+          <br />
+          {`${rules[k].Name}`}
+        </h2>
+      )
+    );
 
-  if (Object.keys(rules).length < 1) {
+  if (Object.keys(rules).length < 1 || isLoading) {
     return <div>Loading...</div>;
   }
 
   const ol = [create].concat(ruleList);
 
-  const r = rules[id] ?? nr;
+  const r = rules[id];
+  if (r === undefined) {
+    return <div>Pending...</div>;
+  }
 
   return (
     <div className="App flex-container">
@@ -49,7 +62,7 @@ const View: React.FunctionComponent<{}> = () => {
         <div>{ol}</div>
       </div>
       <Card className="content-area">
-        <RuleBuilder rule={r} />
+        <RuleEditor rule={r} />
       </Card>
     </div>
   );

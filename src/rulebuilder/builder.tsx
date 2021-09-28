@@ -10,14 +10,11 @@ import {
   BuilderProps,
   JsonTree,
   JsonLogicTree,
+  JsonGroup,
 } from "react-awesome-query-builder";
 import throttle from "lodash/throttle";
 import loadedConfig from "./config_simple"; // <- you can try './config' for more complex examples
 import { rule } from "./init_value";
-
-import { Rule } from "../domain/rule";
-import { storeRule } from "../storage/storage";
-import { NumericDictionaryIterator } from "lodash";
 
 const loadedInitValue = rule;
 
@@ -44,27 +41,14 @@ const preErrorStyle = {
 
 const emptyInitValue: JsonTree = { id: uuid(), type: "group" };
 
-// get init value in JsonTree format:
-//export const initValue: JsonTree =
-//  loadedInitValue && Object.keys(loadedInitValue).length > 0
-//    ? (loadedInitValue as JsonTree)
-//    : emptyInitValue;
-
-//console.log(initValue);
-
-//const initTree: ImmutableTree = checkTree(loadTree(initValue), loadedConfig);
-
-// -OR- alternativaly get init value in JsonLogic format:
-//const initLogic: JsonLogicTree = loadedInitLogic && Object.keys(loadedInitLogic).length > 0 ? loadedInitLogic : undefined;
-//const initTree: ImmutableTree = checkTree(loadFromJsonLogic(initLogic, loadedConfig), loadedConfig);
-
 interface DemoQueryBuilderState {
   tree: ImmutableTree;
   config: Config;
 }
 
 interface RuleBuilderProps {
-  rule: Rule;
+  tree: JsonGroup;
+  onChange: (tree: JsonGroup) => void;
 }
 
 export default class RuleBuilder extends Component<
@@ -73,20 +57,26 @@ export default class RuleBuilder extends Component<
 > {
   private immutableTree: ImmutableTree;
   private config: Config;
-  private points: number;
 
   constructor(props: RuleBuilderProps) {
     super(props);
 
-    const r = loadTree(props.rule.Rules);
+    const r = loadTree(props.tree);
 
-    this.points = props.rule.Points;
+    console.log("build:", props.tree.id);
 
     this.state = {
       tree: r,
       config: loadedConfig,
     };
   }
+
+  /*
+        <div className="query-builder-result">
+        {this.renderResult(this.state)}
+        </div>
+
+*/
 
   render = () => {
     console.log("render", this.state.tree);
@@ -100,18 +90,13 @@ export default class RuleBuilder extends Component<
         />
 
         <button onClick={this.resetValue}>reset</button>
-        <button onClick={this.saveRule}>ok</button>
-
-        <div className="query-builder-result">
-          {this.renderResult(this.state)}
-        </div>
       </div>
     );
   };
 
   resetValue = () => {
     this.setState({
-      tree: checkTree(loadTree(this.props.rule.Rules), loadedConfig),
+      tree: checkTree(loadTree(this.props.tree), loadedConfig),
     });
   };
 
@@ -121,54 +106,27 @@ export default class RuleBuilder extends Component<
         <p>When</p>
         <Builder {...props} />
       </div>
-      <div className="query-builder">
-        <p>Then</p>
-        <p>Increase friss score with</p>
-        <input
-          type="number"
-          value={this.points}
-          onChange={(ev) => {
-            const p = parseInt(ev.currentTarget.value, 10);
-            this.points = p;
-            console.log("pts", this.points, this.immutableTree);
-          }}
-        ></input>
-      </div>
     </div>
   );
-
-  saveRule = () => {
-    const tree = this.immutableTree ?? this.state.tree;
-    const jsonTree = getTree(tree);
-
-    console.log("s:", tree, jsonTree);
-
-    const rule: Rule = {
-      Points: this.points,
-      Name: "",
-      Rules: jsonTree,
-    };
-
-    storeRule(jsonTree.id, stringify(rule));
-  };
 
   onChange = (immutableTree: ImmutableTree, config: Config) => {
     this.immutableTree = immutableTree;
     this.config = config;
     this.updateResult();
 
-    // `jsonTree` or `logic` can be saved to backend
-    // (and then loaded with `loadTree` or `loadFromJsonLogic` as seen above)
     const jsonTree = getTree(immutableTree);
-    const { logic, data, errors } = jsonLogicFormat(immutableTree, config);
+    //const { logic, data, errors } = jsonLogicFormat(immutableTree, config);
 
-    //storeRule(jsonTree.id, stringify(jsonTree));
+    console.log("updated tree");
+
+    this.props.onChange(jsonTree);
   };
 
   updateResult = throttle(() => {
     this.setState({ tree: this.immutableTree, config: this.config });
   }, 100);
 
+  /*
   renderResult = ({
     tree: immutableTree,
     config,
@@ -208,4 +166,5 @@ export default class RuleBuilder extends Component<
       </div>
     );
   };
+  */
 }
