@@ -36,8 +36,7 @@ const View: React.FunctionComponent<{}> = () => {
       mapRule(
         rules[k],
         <h2>
-          {`Rule ${i + 1}`}
-          <br />
+          {`${i + 1} `}
           {`${rules[k].Name}`}
         </h2>
       )
@@ -47,7 +46,8 @@ const View: React.FunctionComponent<{}> = () => {
     return <div>Loading...</div>;
   }
 
-  const ol = [create].concat(ruleList);
+  //const ol = [create].concat(ruleList);
+  const ol = ruleList;
 
   const r = rules[id];
   if (r === undefined) {

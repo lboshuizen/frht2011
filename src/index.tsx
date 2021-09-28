@@ -31,7 +31,9 @@ const LayOut: React.FunctionComponent<{}> = () => {
               <Link to="/">Home</Link>
             </li>
             <li style={{ float: "left", marginRight: "30px" }}>
-              <Link to="/ruledit/0">Rule editor</Link>
+              <Link to="/ruledit/8bbbba9a-cdef-4012-b456-717c2cd8143b">
+                Rule editor
+              </Link>
             </li>
             <li style={{ float: "left", marginRight: "30px" }}>
               <Link to="/screening">Screening</Link>

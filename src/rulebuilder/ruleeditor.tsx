@@ -25,6 +25,7 @@ export const RuleEditor: React.FunctionComponent<Props> = (props) => {
   return (
     <div>
       <div>
+        <p>Rule name</p>
         <input
           type="text"
           value={state.Name}
@@ -48,6 +49,7 @@ export const RuleEditor: React.FunctionComponent<Props> = (props) => {
         />
       </div>
       <div>
+        <p>Score increase</p>
         <input
           type="number"
           value={state.Points}
