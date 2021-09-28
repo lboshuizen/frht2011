@@ -26,18 +26,19 @@ const LayOut: React.FunctionComponent<{}> = () => {
     <Router history={history}>
       <div>
         <nav>
-          <ul>
-            <li>
+          <ul style={{ listStyle: "none" }}>
+            <li style={{ float: "left", marginRight: "30px" }}>
               <Link to="/">Home</Link>
             </li>
-            <li>
+            <li style={{ float: "left", marginRight: "30px" }}>
               <Link to="/ruledit">Rule editor</Link>
             </li>
-            <li>
+            <li style={{ float: "left", marginRight: "30px" }}>
               <Link to="/screening">Screening</Link>
             </li>
           </ul>
         </nav>
+        <div style={{ clear: "both" }} />
       </div>
 
       <Switch>

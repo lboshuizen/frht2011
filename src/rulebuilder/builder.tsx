@@ -97,7 +97,6 @@ export default class RuleBuilder extends Component<
         />
 
         <button onClick={this.resetValue}>reset</button>
-        <button onClick={this.clearValue}>clear</button>
         <button onClick={this.saveRule}>ok</button>
 
         <div className="query-builder-result">

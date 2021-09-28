@@ -1,8 +1,10 @@
-import { Utils as QbUtils } from "react-awesome-query-builder";
+import { JsonGroup, Utils as QbUtils } from "react-awesome-query-builder";
 
 export const newRuleId = () : string => QbUtils.uuid();
 
-//export default { id: "9a99988a-0123-4456-b89a-b1607f326fd8", type: "group" };
+export function newRule() : JsonGroup {
+  return { id: newRuleId(), type: "group" };
+};
 
 export const rule = {
   "id": "9a99988a-0123-4456-b89a-b1607f326fd8",
