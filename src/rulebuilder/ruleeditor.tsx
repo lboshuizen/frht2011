@@ -4,7 +4,7 @@ import { Rule } from "../domain/rule";
 import RuleBuilder from "./builder";
 import { storeRule } from "../storage/storage";
 import { stringify } from "@firebase/util";
-import { KeyboardReturnOutlined } from "@material-ui/icons";
+import { Button, Input, Card } from "antd";
 
 interface EditorState extends Rule {}
 
@@ -12,9 +12,10 @@ interface Props {
   rule: Rule;
 }
 
-const SaveRule = (rule: Rule) => {
+const SaveRule = async (rule: Rule) => {
   const id = rule.Rules.id;
-  storeRule(id, stringify(rule));
+  await storeRule(id, stringify(rule));
+  window.location.reload();
 };
 
 export const RuleEditor: React.FunctionComponent<Props> = (props) => {
@@ -23,11 +24,13 @@ export const RuleEditor: React.FunctionComponent<Props> = (props) => {
   console.log("edit:", state.Rules.id, state.Name);
 
   return (
-    <div>
+    <Card style={{ backgroundColor: "#5484D3", borderRadius: "15px" }}>
       <div>
-        <p>Rule name</p>
-        <input
+        <p style={{ display: "inline", color: "white" }}>Rule name</p>
+        <Input
           type="text"
+          maxLength={20}
+          style={{ maxWidth: "100px", marginLeft: "10px" }}
           value={state.Name}
           onChange={(ev) => {
             if (ev.target == null) return;
@@ -36,7 +39,7 @@ export const RuleEditor: React.FunctionComponent<Props> = (props) => {
               return { ...prev, Name: n };
             });
           }}
-        ></input>
+        ></Input>
       </div>
       <div>
         <RuleBuilder
@@ -49,9 +52,11 @@ export const RuleEditor: React.FunctionComponent<Props> = (props) => {
         />
       </div>
       <div>
-        <p>Score increase</p>
-        <input
+        <p style={{ display: "inline", color: "white" }}>Score increase</p>
+
+        <Input
           type="number"
+          style={{ maxWidth: "100px", marginLeft: "10px" }}
           value={state.Points}
           onChange={(ev) => {
             const p = parseInt(ev.currentTarget.value, 10);
@@ -61,9 +66,11 @@ export const RuleEditor: React.FunctionComponent<Props> = (props) => {
           }}
         />
       </div>
-      <div>
-        <button onClick={() => SaveRule(state)}>Save</button>
+      <div style={{ marginTop: "15px" }}>
+        <Button type="primary" onClick={() => SaveRule(state)}>
+          Save
+        </Button>
       </div>
-    </div>
+    </Card>
   );
 };

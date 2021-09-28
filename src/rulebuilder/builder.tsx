@@ -15,6 +15,7 @@ import {
 import throttle from "lodash/throttle";
 import loadedConfig from "./config_simple"; // <- you can try './config' for more complex examples
 import { rule } from "./init_value";
+import { Button } from "antd";
 
 const loadedInitValue = rule;
 
@@ -63,8 +64,6 @@ export default class RuleBuilder extends Component<
 
     const r = loadTree(props.tree);
 
-    console.log("build:", props.tree.id);
-
     this.state = {
       tree: r,
       config: loadedConfig,
@@ -89,7 +88,14 @@ export default class RuleBuilder extends Component<
           renderBuilder={this.renderBuilder}
         />
 
-        <button onClick={this.resetValue}>reset</button>
+        <Button
+          type="dashed"
+          danger
+          onClick={this.resetValue}
+          style={{ float: "right", marginRight: "35px" }}
+        >
+          reset
+        </Button>
       </div>
     );
   };
@@ -115,9 +121,6 @@ export default class RuleBuilder extends Component<
     this.updateResult();
 
     const jsonTree = getTree(immutableTree);
-    //const { logic, data, errors } = jsonLogicFormat(immutableTree, config);
-
-    console.log("updated tree");
 
     this.props.onChange(jsonTree);
   };

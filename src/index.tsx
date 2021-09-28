@@ -28,15 +28,19 @@ const LayOut: React.FunctionComponent<{}> = () => {
         <nav>
           <ul style={{ listStyle: "none" }}>
             <li style={{ float: "left", marginRight: "30px" }}>
-              <Link to="/">Home</Link>
-            </li>
-            <li style={{ float: "left", marginRight: "30px" }}>
-              <Link to="/ruledit/8bbbba9a-cdef-4012-b456-717c2cd8143b">
-                Rule editor
+              <Link to="/">
+                <h2>Home</h2>
               </Link>
             </li>
             <li style={{ float: "left", marginRight: "30px" }}>
-              <Link to="/screening">Screening</Link>
+              <Link to="/ruledit/8bbbba9a-cdef-4012-b456-717c2cd8143b">
+                <h2>Rule editor</h2>
+              </Link>
+            </li>
+            <li style={{ float: "left", marginRight: "30px" }}>
+              <Link to="/screening">
+                <h2>Screening</h2>
+              </Link>
             </li>
           </ul>
         </nav>
