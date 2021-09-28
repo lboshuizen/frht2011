@@ -1,6 +1,8 @@
 import { Utils as QbUtils } from "react-awesome-query-builder";
 
-export default { id: QbUtils.uuid(), type: "group" };
+export const newRuleId = () : string => QbUtils.uuid();
+
+export default { id: "9a99988a-0123-4456-b89a-b1607f326fd8", type: "group" };
 
 /*
 export default 

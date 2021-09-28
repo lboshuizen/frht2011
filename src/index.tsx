@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import RuleBuilder from "./rulebuilder/builder";
+
+import { Card } from "antd";
 
 import "antd/dist/antd.css";
 import "./assets/styles.css";
 
-import { Card } from "antd";
+import RuleBuilder from "./rulebuilder/builder";
 
 function App() {
   return (

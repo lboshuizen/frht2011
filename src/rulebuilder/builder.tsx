@@ -15,6 +15,9 @@ import throttle from "lodash/throttle";
 import loadedConfig from "./config_simple"; // <- you can try './config' for more complex examples
 import loadedInitValue from "./init_value";
 import loadedInitLogic from "./init_logic";
+
+import { rules, storeRule } from "../storage/storage";
+
 const stringify = JSON.stringify;
 const {
   queryBuilderFormat,
@@ -96,7 +99,11 @@ export default class RuleBuilder extends Component<{}, DemoQueryBuilderState> {
   renderBuilder = (props: BuilderProps) => (
     <div className="query-builder-container" style={{ padding: "10px" }}>
       <div className="query-builder">
+        <p>When</p>
         <Builder {...props} />
+      </div>
+      <div className="query-builder">
+        <p>Then</p>
       </div>
     </div>
   );
@@ -110,6 +117,8 @@ export default class RuleBuilder extends Component<{}, DemoQueryBuilderState> {
     // (and then loaded with `loadTree` or `loadFromJsonLogic` as seen above)
     const jsonTree = getTree(immutableTree);
     const { logic, data, errors } = jsonLogicFormat(immutableTree, config);
+
+    storeRule(jsonTree.id, stringify(jsonTree));
   };
 
   updateResult = throttle(() => {
@@ -129,14 +138,7 @@ export default class RuleBuilder extends Component<{}, DemoQueryBuilderState> {
         <br />
         <div>
           <div>
-            <a
-              href="http://jsonlogic.com/play.html"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              jsonLogicFormat
-            </a>
-            :
+            jsonLogicFormat
             {errors.length > 0 && (
               <pre style={preErrorStyle}>{stringify(errors, undefined, 2)}</pre>
             )}
