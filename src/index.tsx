@@ -4,6 +4,7 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 
 import { RuleEditView } from "./views/editrules";
+import { ScreeningView } from "./views/screening";
 
 import "antd/dist/antd.css";
 import "./assets/styles.css";
@@ -50,6 +51,9 @@ const LayOut: React.FunctionComponent<{}> = () => {
       <Switch>
         <Route path="/ruledit/:id">
           <RuleEditView />
+        </Route>
+        <Route path="/screening">
+          <ScreeningView />
         </Route>
         <Route path="/">
           <Home />
