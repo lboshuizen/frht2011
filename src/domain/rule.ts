@@ -7,12 +7,12 @@ interface ChangeScore {
 
 type Action = ChangeScore;
 
-interface Rule {
+export interface Rule {
     Name: string;
     Rules: JsonTree;
-    Action: Action;
+    Points: number;
 }
 
-interface RuleSet {
+export interface RuleSet {
     Rules : Rule[];
 }

@@ -7,11 +7,11 @@ import RuleBuilder from "../rulebuilder/builder";
 import { useParams } from "react-router";
 import { newRule } from "../rulebuilder/init_value";
 import { JsonGroup } from "react-awesome-query-builder";
-import { JSXElement } from "@babel/types";
+import { Rule } from "../domain/rule";
 
-const mapRule = (rule: JsonGroup, label: string | JSX.Element) => {
-  const k = rule.id;
-  var url = "/ruledit/" + rule.id;
+const mapRule = (rule: Rule, label: string | JSX.Element) => {
+  const k = rule.Rules.id;
+  var url = "/ruledit/" + k;
   return (
     <div key={k} style={{ margin: "10px" }}>
       <div>
@@ -33,7 +33,7 @@ const View: React.FunctionComponent<{}> = () => {
     .sort()
     .map((k, i) => mapRule(rules[k], <h2>{`Rule ${i + 1}`}</h2>));
 
-  if (Object.keys(rules).length == 0) {
+  if (Object.keys(rules).length < 1) {
     return <div>Loading...</div>;
   }
 

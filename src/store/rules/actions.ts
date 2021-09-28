@@ -1,4 +1,5 @@
-import { JsonGroup } from "react-awesome-query-builder";
+import { Rule } from '../../domain/rule';
+
 import { Action } from "redux-actions";
 import { ActionType, deprecated } from "typesafe-actions"
 
@@ -8,7 +9,7 @@ const { createStandardAction } = deprecated
 
 export const ruleLoaded = createStandardAction(
     "RULE_LOADED"
-)<JsonGroup>();
+)<Rule>();
 
 export async function loadRules(dispatch: (action: Action<any>) => any){
     listRules()

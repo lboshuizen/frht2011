@@ -14,10 +14,10 @@ import {
 import throttle from "lodash/throttle";
 import loadedConfig from "./config_simple"; // <- you can try './config' for more complex examples
 import { rule } from "./init_value";
-import loadedInitLogic from "./init_logic";
 
-import { loadRule, rules, storeRule } from "../storage/storage";
-import { JsonGroup } from "react-awesome-query-builder/lib";
+import { Rule } from "../domain/rule";
+import { storeRule } from "../storage/storage";
+import { NumericDictionaryIterator } from "lodash";
 
 const loadedInitValue = rule;
 
@@ -64,7 +64,7 @@ interface DemoQueryBuilderState {
 }
 
 interface RuleBuilderProps {
-  rule: JsonGroup;
+  rule: Rule;
 }
 
 export default class RuleBuilder extends Component<
@@ -73,11 +73,14 @@ export default class RuleBuilder extends Component<
 > {
   private immutableTree: ImmutableTree;
   private config: Config;
+  private points: number;
 
   constructor(props: RuleBuilderProps) {
     super(props);
 
-    const r = loadTree(props.rule);
+    const r = loadTree(props.rule.Rules);
+
+    this.points = props.rule.Points;
 
     this.state = {
       tree: r,
@@ -108,13 +111,7 @@ export default class RuleBuilder extends Component<
 
   resetValue = () => {
     this.setState({
-      tree: checkTree(loadTree(this.props.rule), loadedConfig),
-    });
-  };
-
-  clearValue = () => {
-    this.setState({
-      tree: loadTree(emptyInitValue),
+      tree: checkTree(loadTree(this.props.rule.Rules), loadedConfig),
     });
   };
 
@@ -126,14 +123,33 @@ export default class RuleBuilder extends Component<
       </div>
       <div className="query-builder">
         <p>Then</p>
+        <p>Increase friss score with</p>
+        <input
+          type="number"
+          value={this.points}
+          onChange={(ev) => {
+            const p = parseInt(ev.currentTarget.value, 10);
+            this.points = p;
+            console.log("pts", this.points, this.immutableTree);
+          }}
+        ></input>
       </div>
     </div>
   );
 
   saveRule = () => {
-    const tree = this.immutableTree;
+    const tree = this.immutableTree ?? this.state.tree;
     const jsonTree = getTree(tree);
-    storeRule(jsonTree.id, stringify(jsonTree));
+
+    console.log("s:", tree, jsonTree);
+
+    const rule: Rule = {
+      Points: this.points,
+      Name: "",
+      Rules: jsonTree,
+    };
+
+    storeRule(jsonTree.id, stringify(rule));
   };
 
   onChange = (immutableTree: ImmutableTree, config: Config) => {
