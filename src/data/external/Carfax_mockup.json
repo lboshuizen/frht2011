@@ -1,0 +1,29 @@
+{
+	"RequestCompletedTimestamp": "2021-09-10T05:53:47.897",
+	"SingleVinResponseVin": {
+		"VinValue": "2HJYK16367H512013",
+		"VehicleYear": "2020",
+		"VehicleMake": "TOYOTA",
+		"VehicleModel": "SIENNA",
+		"VehicleTrim": "",
+		"VehicleDrivetrain": "FWD",
+		"VehicleEngine": "2.5L I4",
+		"VehicleTransmission": "eCVT",
+		"VehicleBodyStyle": "5-door minivan",
+		"IsStolen": true,
+		"HasOpenRecalls": false,
+		"HasInterprovincialHistory": false,
+		"HasPoliceReportedAccident": true,
+		"IsInactiveVehicle": false,
+		"HasMultipleCurrentRegistrations": false,
+		"EstimatedCurrentOdometerKm": "60409",
+		"HasFrameDamage": false,
+		"OwnershipType": "Personal lease"
+	},
+	"VhrUrl": "https://vinscan.carfax.ca/SingleVin/Confirmation?id=DqY6gayLylIaF%2bGi0zcqqQ%3d%3d&vin=2HJYK16367H512013&source=1",
+	"ViewedVhrOrderLimit": null,
+	"ViewedVhrOrders": null,
+	"ReportTypeID": null,
+	"ResponseMessage": null,
+	"LatestLienReport": null
+}

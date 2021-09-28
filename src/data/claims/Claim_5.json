@@ -1,0 +1,705 @@
+{
+    "Parties": {
+        "REFIDPARTY01": {
+            "FirstName": "Person1FirstName",
+            "LastName": "Person1LastName",
+            "FullName": null,
+            "Initials": "FL",
+            "Gender": "M",
+            "Prefix": "Dr",
+            "BirthCountryCode": "NL",
+            "Nationality": "NL",
+            "BirthDate": "1986-06-25T00:00:00",
+            "Occupation": null,
+            "FraudRegistration": null,
+            "numberOfActivePolicies": null,
+            "MaritalStatus": null,
+            "NumberOfCancellations": 2,
+            "ClaimIntoxication": true,
+            "Contacts": [
+                {
+                    "Type": "Email",
+                    "Value": "emailperson1@email.com"
+                },
+                {
+                    "Type": "Mobile",
+                    "Value": "+31610101010"
+                },
+                {
+                    "Type": "Phone",
+                    "Value": "3110101010"
+                },
+                {
+                    "Type": "Fax",
+                    "Value": "1010101010"
+                }
+            ],
+            "Identifications": [
+                {
+                    "Type": "Passport",
+                    "Value": "SSSN11111",
+                    "ExpiryDate": "2024-03-15T00:00:00"
+                },
+                {
+                    "Type": "DriverLicense",
+                    "Value": "SDLC11111",
+                    "ExpiryDate": "2022-06-01T00:00:00"
+                },
+                {
+                    "Type": "SSN",
+                    "Value": "BSN11111",
+                    "ExpiryDate": null
+                }
+            ],
+            "BankAccounts": [
+                {
+                    "Number": "NL11XXXA1111111111",
+                    "Type": "IBAN",
+                    "Bic": "XXXANL1A",
+                    "CardHolderName": "Person1FirstName Person1LastName"
+                }
+            ],
+            "Address": {
+                "Country": "Netherlands",
+                "CountryIso": "NLD",
+                "City": "Utrecht",
+                "Postcode": "1111AA",
+                "Street": "First Street",
+                "HouseNumber": 11,
+                "HouseNumberAddition": "B",
+                "AddressLine": "First Street 11B, 1111AA Utrecht",
+                "Location": {
+                    "Latitude": 38.8951,
+                    "Longitude": -77.0364,
+                    "Description": "industrial area"
+                },
+                "State": null,
+                "Province": null
+            },
+            "Lawyers": null,
+            "discriminator": "Person"
+        },
+        "REFIDPARTY02": {
+            "FirstName": "Person2FirstName",
+            "LastName": "Person2LastName",
+            "FullName": null,
+            "Initials": "RW",
+            "Gender": "F",
+            "Prefix": "Ms",
+            "BirthCountryCode": "NL",
+            "Nationality": "NL",
+            "BirthDate": "1984-07-07T00:00:00",
+            "Occupation": null,
+            "FraudRegistration": null,
+            "numberOfActivePolicies": null,
+            "MaritalStatus": null,
+            "NumberOfCancellations": 2,
+            "ClaimIntoxication": true,
+            "Contacts": [
+                {
+                    "Type": "Email",
+                    "Value": "emailperson2@email.com"
+                },
+                {
+                    "Type": "Mobile",
+                    "Value": "+31620202020"
+                },
+                {
+                    "Type": "Phone",
+                    "Value": "3120202020"
+                },
+                {
+                    "Type": "Fax",
+                    "Value": "2020202020"
+                }
+            ],
+            "Identifications": [
+                {
+                    "Type": "Passport",
+                    "Value": "SSSN22222",
+                    "ExpiryDate": "2024-03-15T00:00:00"
+                },
+                {
+                    "Type": "DriverLicense",
+                    "Value": "SDLC22222",
+                    "ExpiryDate": "2022-06-01T00:00:00"
+                },
+                {
+                    "Type": "SSN",
+                    "Value": "BSN22222",
+                    "ExpiryDate": null
+                }
+            ],
+            "BankAccounts": [
+                {
+                    "Number": "NL22XXXA22222222222",
+                    "Type": "IBAN",
+                    "Bic": "XXXANL2A",
+                    "CardHolderName": "Person2FirstName Person2LastName"
+                }
+            ],
+            "Address": {
+                "Country": "Netherlands",
+                "CountryIso": "NLD",
+                "City": "Utrecht",
+                "Postcode": "2222AA",
+                "Street": "Second Street",
+                "HouseNumber": 22,
+                "HouseNumberAddition": "B",
+                "AddressLine": "Second Street 11B, 2222AA Utrecht",
+                "Location": {
+                    "Latitude": 38.2222,
+                    "Longitude": -77.2222,
+                    "Description": "industrial area"
+                },
+                "State": null,
+                "Province": null
+            },
+            "Lawyers": null,
+            "discriminator": "Person"
+        },
+        "REFIDPARTY03": {
+            "FirstName": "Person3FirstName",
+            "LastName": "Person3LastName",
+            "FullName": null,
+            "Initials": "PS",
+            "Gender": "M",
+            "Prefix": "Dr",
+            "BirthCountryCode": "NL",
+            "Nationality": "NL",
+            "BirthDate": "1977-05-04T00:00:00",
+            "Occupation": null,
+            "FraudRegistration": null,
+            "numberOfActivePolicies": null,
+            "MaritalStatus": null,
+            "NumberOfCancellations": 2,
+            "ClaimIntoxication": true,
+            "Contacts": [
+                {
+                    "Type": "Email",
+                    "Value": "emailperson3@email.com"
+                },
+                {
+                    "Type": "Mobile",
+                    "Value": "+31630303030"
+                },
+                {
+                    "Type": "Phone",
+                    "Value": "3130303030"
+                },
+                {
+                    "Type": "Fax",
+                    "Value": "3030303030"
+                }
+            ],
+            "Identifications": [
+                {
+                    "Type": "Passport",
+                    "Value": "SSSN33333",
+                    "ExpiryDate": "2024-03-15T00:00:00"
+                },
+                {
+                    "Type": "DriverLicense",
+                    "Value": "SDLC33333",
+                    "ExpiryDate": "2022-06-01T00:00:00"
+                },
+                {
+                    "Type": "SSN",
+                    "Value": "BSN33333",
+                    "ExpiryDate": null
+                }
+            ],
+            "BankAccounts": [
+                {
+                    "Number": "NL33XXXA3333333333",
+                    "Type": "IBAN",
+                    "Bic": "XXXANL3A",
+                    "CardHolderName": "Person3FirstName Person3LastName"
+                }
+            ],
+            "Address": {
+                "Country": "Netherlands",
+                "CountryIso": "NLD",
+                "City": "Utrecht",
+                "Postcode": "3333AA",
+                "Street": "Third Street",
+                "HouseNumber": 33,
+                "HouseNumberAddition": "B",
+                "AddressLine": "Third Street 33B, 3333AA Utrecht",
+                "Location": {
+                    "Latitude": 38.3333,
+                    "Longitude": -77.3333,
+                    "Description": "industrial area"
+                },
+                "State": null,
+                "Province": null
+            },
+            "Lawyers": null,
+            "discriminator": "Person"
+        },
+        "REFIDPARTY04": {
+            "Name": "CompanyName",
+            "LegalForm": "CompanyLegalForm",
+            "Contacts": [
+                {
+                    "Type": "Email",
+                    "Value": "company@email.com"
+                },
+                {
+                    "Type": "Mobile",
+                    "Value": "+31690909090"
+                },
+                {
+                    "Type": "Phone",
+                    "Value": "3190909090"
+                },
+                {
+                    "Type": "Fax",
+                    "Value": "9090909090"
+                }
+            ],
+            "Identifications": [
+                {
+                    "Type": "CoC",
+                    "Value": "111111",
+                    "ExpiryDate": null
+                }
+            ],
+            "BankAccounts": [
+                {
+                    "Number": "NL99XXXA9999999999",
+                    "Type": "IBAN",
+                    "Bic": "XXXANL9A",
+                    "CardHolderName": "CompanyName"
+                }
+            ],
+            "Address": {
+                "Country": "Netherlands",
+                "CountryIso": "NLD",
+                "City": "Utrecht",
+                "Postcode": "4444AA",
+                "Street": "Fourth Street",
+                "HouseNumber": 44,
+                "HouseNumberAddition": "B",
+                "AddressLine": "Fourth Street 44B, 4444AA Utrecht",
+                "Location": {
+                    "Latitude": 38.4444,
+                    "Longitude": -77.4444,
+                    "Description": "industrial area"
+                },
+                "State": null,
+                "Province": null
+            },
+            "Lawyers": null,
+            "discriminator": "Company"
+        }
+    },
+    "Claim": {
+        "Policy": {
+            "FamilyComposition": "FamilyNoChildren",
+            "HighValuables": {
+                "jewelleries": 5000,
+                "watch": 5000
+            },
+            "Broker": null,
+            "Agent": {
+                "Reference": "REFIDPARTY04"
+            },
+            "Holders": [
+                {
+                    "Reference": "REFIDPARTY01"
+                }
+            ],
+            "Mortgagees": [
+                {
+                    "Reference": "REFIDPARTY04"
+                }
+            ],
+            "LeaseHolders": [
+                {
+                    "Reference": "REFIDPARTY04"
+                }
+            ],
+            "LienHolders": [
+                {
+                    "Reference": "REFIDPARTY04"
+                }
+            ],
+            "ObjectsInsured": [
+                {
+                    "Object": {
+                        "Usage": "Personal",
+                        "Value": 350000,
+                        "ConstructionType": "concrete",
+                        "ConstructionYear": 1950,
+                        "Roofing": "roof tiles",
+                        "IdentificationNumber": "12345ABCD",
+                        "SolarPanels": true,
+                        "SecuritySystem": false,
+                        "Address": {
+                            "Country": "Netherlands",
+                            "CountryIso": "NLD",
+                            "City": "Utrecht",
+                            "Postcode": "1111AA",
+                            "Street": "First Street",
+                            "HouseNumber": 11,
+                            "HouseNumberAddition": "B",
+                            "AddressLine": "Upper Street 11B, 1111AA Utrecht",
+                            "Location": {
+                                "Latitude": 38.8951,
+                                "Longitude": -77.0364,
+                                "Description": "industrial area"
+                            },
+                            "State": "",
+                            "Province": "Noord-Holland"
+                        },
+                        "Owners": null,
+                        "Coverages": null,
+                        "discriminator": "Property"
+                    }
+                }
+            ],
+            "PolicyId": "HP00001",
+            "InceptionDate": "2018-04-21T00:00:00",
+            "EndDate": "2021-04-21T00:00:00",
+            "YearsWithoutClaim": 2,
+            "InsuredAmount": 1234578,
+            "IncurredAmount": null,
+            "AnnualPremium": 1000,
+            "Product": "Home",
+            "Channel": "Broker",
+            "Type": "Personal",
+            "SigningDate": "2018-04-21T00:00:00",
+            "Coverages": [
+                {
+                    "Type": "fireHazard",
+                    "InsuredAmount": 450000,
+                    "AmountExcess": 0,
+                    "AnnualPremium": null
+                },
+                {
+                    "Type": "contentTheft",
+                    "InsuredAmount": 10000,
+                    "AmountExcess": 500,
+                    "AnnualPremium": null
+                },
+                {
+                    "Type": "contentDamage",
+                    "InsuredAmount": 50000,
+                    "AmountExcess": 1500,
+                    "AnnualPremium": null
+                }
+            ],
+            "PreviousExpiryDate": "2019-04-21T00:00:00",
+            "RenewalDate": null,
+            "AmountExcess": 1000,
+            "FleetFlag": null,
+            "PaymentFrequency": "Monthly",
+            "PaymentType": "Payment_Authorization",
+            "Changes": [
+                {
+                    "Type": "Renewal",
+                    "Date": "2019-04-21T00:00:00"
+                }
+            ],
+            "ApplicationDate": "2012-04-20T00:00:00",
+            "FreeClaim": null,
+            "Status": "Active",
+            "LatePaymentWarning": false,
+            "PremiumDiscount": 10,
+            "EndReason": null,
+            "HolderDateFirstPolicy": null,
+            "BonusMalusScale": null,
+            "BonusMalusPercentage": null,
+            "NumberOfAssistanceClaims": null,
+            "CommercialLabel": null,
+            "LossRatio": null,
+            "OtherInsured": [
+                {
+                    "Reference": "REFIDPARTY03"
+                }
+            ]
+        },
+        "Witnesses": [
+            {
+                "Reference": "REFIDPARTY02"
+            },
+            {
+                "Reference": "REFIDPARTY03"
+            }
+        ],
+        "Reporters": [],
+        "Claimants": [
+            {
+                "Reference": "REFIDPARTY01"
+            }
+        ],
+        "SubClaims": [
+            {
+                "Property": {
+                    "Usage": "Personal",
+                    "Value": 350000,
+                    "ConstructionType": "concrete",
+                    "ConstructionYear": 1950,
+                    "Roofing": "roof tiles",
+                    "IdentificationNumber": "12345ABCD",
+                    "SolarPanels": true,
+                    "SecuritySystem": false,
+                    "Address": {
+                        "Country": "Netherlands",
+                        "CountryIso": "NLD",
+                        "City": "Utrecht",
+                        "Postcode": "1111AA",
+                        "Street": "First Street",
+                        "HouseNumber": 11,
+                        "HouseNumberAddition": "B",
+                        "AddressLine": "Upper Street 11B, 1111AA Utrecht",
+                        "Location": {
+                            "Latitude": 38.8951,
+                            "Longitude": -77.0364,
+                            "Description": "industrial area"
+                        },
+                        "State": "",
+                        "Province": "Noord-Holland"
+                    },
+                    "Owners": null,
+                    "Coverages": null,
+                    "discriminator": "Property"
+                },
+                "Repairer": null,
+                "Surveyor": null,
+                "DamageList": [],
+                "Payees": [],
+                "Experts": [],
+                "Employers": [],
+                "Reference": "SUBCLAIM-1-PROPDMG",
+                "DamageAmount": null,
+                "Status": "Open",
+                "Liability": 100,
+                "TimeReported": "15:00",
+                "ClosingDate": "2020-12-10T00:00:00",
+                "ReportedDate": "2020-11-10T00:00:00",
+                "AmountPaid": 0,
+                "AmountRecovered": 0,
+                "AmountReserved": 4000,
+                "AmountClaimed": 4000,
+                "Coverages": [
+                    {
+                        "Type": "fireHazard",
+                        "InsuredAmount": 450000,
+                        "AmountExcess": 0,
+                        "AnnualPremium": null
+                    }
+                ],
+                "DamageType": "own_damage",
+                "Claimant": {
+                    "Reference": "REFIDPARTY01"
+                },
+                "CustomType": null,
+                "CashSettlement": true,
+                "ClosedOutcome": "Opened in Error",
+                "ReopenDate": "2019-01-03T00:00:00",
+                "ExposureOwners": [
+                    "Maddy Kiefer",
+                    "Sherry Renie"
+                ],
+                "IndependentAdjusters": [
+                    "James Korey"
+                ],
+                "Notes": [],
+                "discriminator": "SubClaimPropertyDamage"
+            },
+            {
+                "Property": {
+                    "Usage": "Personal",
+                    "Value": 350000,
+                    "ConstructionType": "concrete",
+                    "ConstructionYear": 1950,
+                    "Roofing": "roof tiles",
+                    "IdentificationNumber": "12345ABCD",
+                    "SolarPanels": true,
+                    "SecuritySystem": false,
+                    "Address": {
+                        "Country": "Netherlands",
+                        "CountryIso": "NLD",
+                        "City": "Utrecht",
+                        "Postcode": "1111AA",
+                        "Street": "Upper Street",
+                        "HouseNumber": 11,
+                        "HouseNumberAddition": "B",
+                        "AddressLine": "Upper Street 11B, 1111AA Utrecht",
+                        "Location": {
+                            "Latitude": 38.8951,
+                            "Longitude": -77.0364,
+                            "Description": "industrial area"
+                        },
+                        "State": "",
+                        "Province": "Noord-Holland"
+                    },
+                    "Owners": null,
+                    "Coverages": null,
+                    "discriminator": "Property"
+                },
+                "ClaimedItems": {
+                    "iPhone X 64 GB": 679,
+                    "Philips The One (50PUS8505) - Ambilight (2020)": 630
+                },
+                "DamageList": [],
+                "Payees": [],
+                "Experts": [],
+                "Employers": [],
+                "Reference": "SUBCLAIM-1-CONTDMG",
+                "DamageAmount": null,
+                "Status": "Open",
+                "Liability": 100,
+                "TimeReported": "15:00",
+                "ClosingDate": "2020-12-10T00:00:00",
+                "ReportedDate": "2020-11-10T00:00:00",
+                "AmountPaid": 0,
+                "AmountRecovered": 0,
+                "AmountReserved": 4000,
+                "AmountClaimed": 4000,
+                "Coverages": null,
+                "DamageType": null,
+                "Claimant": {
+                    "Reference": "REFIDPARTY01"
+                },
+                "CustomType": null,
+                "CashSettlement": true,
+                "ClosedOutcome": "Opened in Error",
+                "ReopenDate": "2019-01-03T00:00:00",
+                "ExposureOwners": [
+                    "Maddy Kiefer",
+                    "Sherry Renie"
+                ],
+                "IndependentAdjusters": [
+                    "James Korey"
+                ],
+                "Notes": [],
+                "discriminator": "SubClaimContentDamage"
+            }
+        ],
+        "Address": {
+            "Country": "Netherlands",
+            "CountryIso": "NLD",
+            "City": "Utrecht",
+            "Postcode": "1111AA",
+            "Street": "First Street",
+            "HouseNumber": 11,
+            "HouseNumberAddition": "B",
+            "AddressLine": "First Street 11B, 1111AA Utrecht",
+            "Location": {
+                "Latitude": 38.3333,
+                "Longitude": -77.3333,
+                "Description": "industrial area"
+            },
+            "State": null,
+            "Province": null
+        },
+        "ReportType": "FNL",
+        "NumberOfVehicles": null,
+        "NumberOfThirdParties": null,
+        "NumberOfInjured": 0,
+        "IncidentId": "1111",
+        "Flag": [],
+        "CompensationType": "Repair",
+        "AmountRecovered": 0,
+        "AmountPaid": 0,
+        "Status": "Open",
+        "Statement": "My neighbour called me and told me that my house caught fire. The fire department managed to control the fire, but the property is damaged.",
+        "DamageAmount": 3000,
+        "DamageList": [
+            "First floor"
+        ],
+        "DamageType": "own_damage",
+        "Liability": 100,
+        "Cause": "Fire",
+        "AmountReserved": 4000,
+        "ReportedDate": "2020-06-24T00:00:00",
+        "OccurredDate": "2012-04-22T00:00:00",
+        "ClaimId": "HOMECLAIM-1",
+        "TimeOccurred": "21:00",
+        "TimeReported": null,
+        "PoliceInvolved": true,
+        "RecoveryClaim": true,
+        "AmountClaimed": 4000,
+        "ReopenDate": null,
+        "ClosingDate": null,
+        "DamageCauser": "dog",
+        "WithdrawalReason": "Uneconomic",
+        "FaultRating": "Insured at fault",
+        "ClosedOutcome": "Settled/Resolved",
+        "ThirdParties": [
+            {
+                "LegalEntityRef": {
+                    "Reference": "REFIDPARTY02"
+                },
+                "Object": {
+                    "Usage": "Commercial",
+                    "Value": 350000,
+                    "ConstructionType": "concrete",
+                    "ConstructionYear": 2004,
+                    "Roofing": "roof tiles",
+                    "IdentificationNumber": "1234abcd",
+                    "SolarPanels": true,
+                    "SecuritySystem": true,
+                    "Address": {
+                        "Country": "Netherlands",
+                        "CountryIso": "NLD",
+                        "City": "Utrecht",
+                        "Postcode": "1234AA",
+                        "Street": "Upper Street",
+                        "HouseNumber": 16,
+                        "HouseNumberAddition": "B",
+                        "AddressLine": "Upper Street 16B, 1234AA Utrecht",
+                        "Location": {
+                            "Latitude": 38.8951,
+                            "Longitude": -77.0364,
+                            "Description": null
+                        },
+                        "State": "",
+                        "Province": "Noord-Holland"
+                    },
+                    "Owners": [
+                        {
+                            "Reference": "REFIDPARTY02"
+                        }
+                    ],
+                    "Coverages": [
+                        {
+                            "Type": "Renters Insurance",
+                            "InsuredAmount": 5800,
+                            "AmountExcess": 2000,
+                            "AnnualPremium": 1000
+                        },
+                        {
+                            "Type": "Earthquake Insurance",
+                            "InsuredAmount": 1450000,
+                            "AmountExcess": 0,
+                            "AnnualPremium": 1000
+                        }
+                    ],
+                    "discriminator": "Property"
+                }
+            }
+        ],
+        "StaffAppraisers": [
+            "Linsey Justy",
+            "Leanora Egbert"
+        ],
+        "Custodians": [],
+        "AdverseParties": [],
+        "Vendors": [],
+        "Pedestrians": [],
+        "Notes": [
+            {
+                "Text": "Call from Claimant to ask about status of the claim. I feel something is not right here.",
+                "Date": "2020-11-10T00:00:00"
+            }
+        ]
+    },
+    "Branch": "private_nonlife",
+    "Label": "FRISS",
+    "Process": "claim_notification",
+    "ContactUserId": "user@example.com"
+}

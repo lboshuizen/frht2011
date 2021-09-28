@@ -1,3 +1,8 @@
+import { Utils as QbUtils } from "react-awesome-query-builder";
+
+export default { id: QbUtils.uuid(), type: "group" };
+
+/*
 export default 
 {
   "type": "group",
@@ -56,4 +61,5 @@ export default
     "conjunction": "AND",
     "not": false
   }
-};
+}
+*/

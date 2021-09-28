@@ -1,0 +1,487 @@
+{
+    "Parties": {
+        "REFIDPARTY01": {
+            "FirstName": "Person1FirstName",
+            "LastName": "Person1LastName",
+            "FullName": null,
+            "Initials": "FL",
+            "Gender": "M",
+            "Prefix": "Dr",
+            "BirthCountryCode": "NL",
+            "Nationality": "NL",
+            "BirthDate": "1986-06-25T00:00:00",
+            "Occupation": null,
+            "FraudRegistration": null,
+            "numberOfActivePolicies": null,
+            "MaritalStatus": null,
+            "NumberOfCancellations": 2,
+            "ClaimIntoxication": true,
+            "Contacts": [
+                {
+                    "Type": "Email",
+                    "Value": "emailperson1@email.com"
+                },
+                {
+                    "Type": "Mobile",
+                    "Value": "+31610101010"
+                },
+                {
+                    "Type": "Phone",
+                    "Value": "3110101010"
+                },
+                {
+                    "Type": "Fax",
+                    "Value": "1010101010"
+                }
+            ],
+            "Identifications": [
+                {
+                    "Type": "Passport",
+                    "Value": "SSSN11111",
+                    "ExpiryDate": "2024-03-15T00:00:00"
+                },
+                {
+                    "Type": "DriverLicense",
+                    "Value": "SDLC11111",
+                    "ExpiryDate": "2022-06-01T00:00:00"
+                },
+                {
+                    "Type": "SSN",
+                    "Value": "BSN11111",
+                    "ExpiryDate": null
+                }
+            ],
+            "BankAccounts": [
+                {
+                    "Number": "NL11XXXA1111111111",
+                    "Type": "IBAN",
+                    "Bic": "XXXANL1A",
+                    "CardHolderName": "Person1FirstName Person1LastName"
+                }
+            ],
+            "Address": {
+                "Country": "Netherlands",
+                "CountryIso": "NLD",
+                "City": "Utrecht",
+                "Postcode": "1111AA",
+                "Street": "First Street",
+                "HouseNumber": 11,
+                "HouseNumberAddition": "B",
+                "AddressLine": "First Street 11B, 1111AA Utrecht",
+                "Location": {
+                    "Latitude": 38.8951,
+                    "Longitude": -77.0364,
+                    "Description": "industrial area"
+                },
+                "State": null,
+                "Province": null
+            },
+            "Lawyers": null,
+            "discriminator": "Person"
+        },
+        "REFIDPARTY06": {
+            "FirstName": "Person6FirstName",
+            "LastName": "Person6LastName",
+            "BirthDate": "1985-04-24T00:00:00",
+            "Identifications": [
+                {
+                    "Type": "SSN",
+                    "Value": "BSN555555",
+                    "ExpiryDate": null
+                }
+            ],
+            "Address": {
+                "Country": "Netherlands",
+                "CountryIso": "NLD",
+                "City": "Rotterdam",
+                "Street": "Fifth Street",
+                "HouseNumber": 5
+            },
+            "discriminator": "Person"
+        },
+		"REFIDPARTY07": {
+            "FirstName": "Person7FirstName",
+            "LastName": "Person7LastName",
+            "BirthDate": "1975-05-24T00:00:00",
+			"ClaimIntoxication": true,
+            "Identifications": [
+                {
+                    "Type": "SSN",
+                    "Value": "BSN77777777",
+                    "ExpiryDate": null
+                }
+            ],
+            "Address": {
+                "Country": "Netherlands",
+                "CountryIso": "NLD",
+                "City": "Volendam",
+                "Street": "Sixth Street",
+                "HouseNumber": 10
+            },
+            "discriminator": "Person"
+        },
+		"REFIDPARTY08": {
+            "FirstName": "Person8FirstName",
+            "LastName": "Person8LastName",
+            "BirthDate": "1989-07-24T00:00:00",
+            "Identifications": [
+                {
+                    "Type": "SSN",
+                    "Value": "BSN888888",
+                    "ExpiryDate": null
+                }
+            ],
+            "Address": {
+                "Country": "Netherlands",
+                "CountryIso": "NLD",
+                "City": "Volendam",
+                "Street": "Sixth Street",
+                "HouseNumber": 10
+            },
+            "discriminator": "Person"
+        },
+		"REFIDPARTY09": {
+            "FirstName": "Person9FirstName",
+            "LastName": "Person9LastName",
+            "BirthDate": "1995-06-13T00:00:00",
+            "Identifications": [
+                {
+                    "Type": "SSN",
+                    "Value": "BSN999999",
+                    "ExpiryDate": null
+                }
+            ],
+            "Address": {
+                "Country": "Netherlands",
+                "CountryIso": "NLD",
+                "City": "Arnhem",
+                "Street": "Seventh Street",
+                "HouseNumber": 35
+            },
+            "discriminator": "Person"
+        },
+		"REFIDPARTY10": {
+            "FirstName": "Person10FirstName",
+            "LastName": "Person10LastName",
+            "BirthDate": "1991-03-21T00:00:00",
+            "Identifications": [
+                {
+                    "Type": "SSN",
+                    "Value": "BSN101010",
+                    "ExpiryDate": null
+                }
+            ],
+            "Address": {
+                "Country": "Netherlands",
+                "CountryIso": "NLD",
+                "City": "Amsterdam",
+                "Street": "Eighth Street",
+                "HouseNumber": 125
+            },
+            "discriminator": "Person"
+        },
+		"REFIDPARTY11": {
+            "FirstName": "Person11FirstName",
+            "LastName": "Person11LastName",
+            "BirthDate": "1983-03-20T00:00:00",
+			"ClaimIntoxication": true,
+            "Identifications": [
+                {
+                    "Type": "SSN",
+                    "Value": "BSN102102",
+                    "ExpiryDate": null
+                }
+            ],
+            "Address": {
+                "Country": "Netherlands",
+                "CountryIso": "NLD",
+                "City": "Amsterdam",
+                "Street": "Eighth Street",
+                "HouseNumber": 125
+            },
+            "discriminator": "Person"
+        }
+    },
+    "Claim": {
+        "Policy": {
+            "RegularDrivers": [
+                {
+                    "Reference": "REFIDPARTY01"
+                }
+            ],
+            "ObjectsInsured": [
+                {
+                    "Object": {
+                        "Bodystyle": "hatchback",
+                        "LicensePlate": "1CCC11",
+                        "Vin": "5J6YH286X4L033795",
+                        "Year": 1999,
+                        "Make": "Toyota",
+                        "Model": "Corolla",
+                        "EngineVolume": 1798,
+                        "FirstIssuingDate": "2004-01-02T00:00:00",
+                        "FirstAdmissionDate": "1999-10-14T00:00:00",
+                        "FirstImportDate": "2004-01-01T00:00:00",
+                        "LatestOwnerRegistrationDate": "2004-01-02T00:00:00",
+                        "FuelType": "Petrol",
+                        "ListPrice": 25899,
+                        "Mileage": "189341",
+                        "Power": "125",
+                        "PriorDamage": [
+                            "unknown"
+                        ],
+                        "RegistrationType": "Commercial",
+                        "Status": "damage repairable (no parts)",
+                        "Trim": "touring sports 1.8 hybrid",
+                        "Weight": 1285,
+                        "Drivable": true,
+                        "Value": null,
+                        "RepairShopAssociated": true,
+                        "TotalLoss": false,
+                        "SpecialType": "Taxi",
+                        "RegistrationAuthority": "OH",
+                        "AccessoriesValue": 2300,
+                        "LicenseplateState": "OH",
+                        "IsImported": null,
+                        "Owners": [
+                            {
+                                "Reference": "REFIDPARTY01"
+                            }
+                        ],
+                        "Coverages": [
+                            {
+                                "Type": "Third Party Liability",
+                                "InsuredAmount": 25000,
+                                "AmountExcess": 125,
+                                "AnnualPremium": null
+                            },
+                            {
+                                "Type": "Own damage",
+                                "InsuredAmount": 1450000,
+                                "AmountExcess": 0,
+                                "AnnualPremium": null
+                            }
+                        ],
+                        "discriminator": "Vehicle"
+                    }
+                }
+            ],
+            "PolicyId": "PC12345",
+            "InceptionDate": "2012-04-22T00:00:00",
+            "EndDate": "2014-04-22T00:00:00",
+            "YearsWithoutClaim": 2,
+            "InsuredAmount": 5329.9,
+            "IncurredAmount": 1330.1,
+            "AnnualPremium": 74.15,
+            "Product": "motor",
+            "Channel": "Broker",
+            "Type": "Personal",
+            "SigningDate": "2012-04-21T00:00:00",
+            "Coverages": [
+                {
+                    "Type": "collision",
+                    "InsuredAmount": 294.2,
+                    "AmountExcess": 50,
+                    "AnnualPremium": null
+                }
+            ],
+            "PreviousExpiryDate": "2013-04-22T00:00:00",
+            "RenewalDate": "2013-02-15T00:00:00",
+            "Status": "Active"
+            
+        },
+        "Claimants": [
+            {
+                "Reference": "REFIDPARTY01"
+            }
+        ],
+        "SubClaims": [
+            {
+                "Vehicle": {
+                    "Bodystyle": "hatchback",
+                    "LicensePlate": "1AAA11",
+                    "Vin": "5J6YH286X4L033795",
+                    "Year": 1999,
+                    "Make": "Toyota",
+                    "Model": "Corolla",
+                    "EngineVolume": 1798,
+                    "FirstIssuingDate": "2004-01-02T00:00:00",
+                    "FirstAdmissionDate": "1999-10-14T00:00:00",
+                    "FirstImportDate": "2004-01-01T00:00:00",
+                    "LatestOwnerRegistrationDate": "2004-01-02T00:00:00",
+                    "FuelType": "Petrol",
+                    "ListPrice": 25899,
+                    "Mileage": "189341",
+                    "Power": "125",
+                    "PriorDamage": [
+                        "unknown"
+                    ],
+                    "RegistrationType": "Personal",
+                    "Status": "damage repairable (no parts)",
+                    "Trim": "touring sports 1.8 hybrid",
+                    "Weight": 1285,
+                    "Drivable": true,
+                    "Value": null,
+                    "RepairShopAssociated": true,
+                    "TotalLoss": false,
+                    "RegistrationAuthority": "OH",
+                    "AccessoriesValue": 2300,
+                    "LicenseplateState": "OH",
+                    "IsImported": null,
+                    "Owners": [
+                        {
+                            "Reference": "REFIDPARTY01"
+                        }
+                    ],
+                    "Coverages": [
+                        {
+                            "Type": "Third Party Liability",
+                            "InsuredAmount": 25000,
+                            "AmountExcess": 125,
+                            "AnnualPremium": null
+                        },
+                        {
+                            "Type": "Own damage",
+                            "InsuredAmount": 1450000,
+                            "AmountExcess": 0,
+                            "AnnualPremium": null
+                        }
+                    ],
+                    "discriminator": "Vehicle"
+                },
+            
+                "Driver": {
+                    "Reference": "REFIDPARTY01"
+                },
+                "DamageList": [
+                    "left_front",
+                    "right_back"
+                ],
+                "Reference": "SUBCLAIM-01",
+                "DamageAmount": 2000,
+                "Status": "Open",
+                "Liability": 100,
+                "TimeReported": "16:23",
+                "ReportedDate": "2018-04-23T00:00:00",
+                "AmountPaid": 0,
+                "AmountRecovered": 0,
+                "AmountReserved": 4000,
+                "AmountClaimed": 4000,
+                "Coverages": [
+                    {
+                        "Type": "collision",
+                        "InsuredAmount": 5000,
+                        "AmountExcess": 50,
+                        "AnnualPremium": null
+                    }
+                ],
+                "DamageType": "own_damage",
+                "Claimant": {
+                    "Reference": "REFIDPARTY01"
+                },
+                "CustomType": "vehicle_damage",
+                "CashSettlement": false,
+                "Notes": [
+                    {
+                        "Text": "Call from Policyholder to ask about status of the claim.",
+                        "Date": "2016-01-08T00:00:00"
+                    }
+                ],
+                "discriminator": "SubClaimAutoDamage"
+            },
+		 {
+                "Vehicle": {
+                    "Bodystyle": "5-door minivan",
+                    "LicensePlate": "1BBB11",
+                    "Vin": "2HJYK16367H512013",
+                    "Year": 2020,
+                    "Make": "Toyota",
+                    "Model": "SIENNA",
+                    "FuelType": "Petrol",
+                    "PriorDamage": [
+                        "unknown"
+                    ],
+                    "RegistrationType": "Personal",
+                    "Drivable": true,
+                    "Owners": [
+                        {
+                            "Reference": "REFIDPARTY06"
+                        }
+                    ],
+                    "discriminator": "Vehicle"
+                },
+            
+                "Driver": {
+                    "Reference": "REFIDPARTY06"
+                },
+				"Passengers": [
+						{
+                            "Reference": "REFIDPARTY07"
+                        },
+						{
+                            "Reference": "REFIDPARTY08"
+                        },
+						{
+                            "Reference": "REFIDPARTY09"
+                        },
+						{
+                            "Reference": "REFIDPARTY10"
+                        },
+						{
+                            "Reference": "REFIDPARTY11"
+                        }
+				],
+                "Reference": "SUBCLAIM-02",
+                "ReportedDate": "2018-04-23T00:00:00",
+                "DamageType": "own_damage",
+                "discriminator": "SubClaimAutoDamage"
+            }
+
+        ],
+        "Address": {
+            "Country": "Netherlands",
+            "CountryIso": "NLD",
+            "City": "Utrecht",
+            "Postcode": "1111AA",
+            "Street": "First Street",
+            "HouseNumber": 11,
+            "HouseNumberAddition": "B",
+            "AddressLine": "First Street 11B, 1111AA Utrecht",
+            "Location": {
+                "Latitude": 38.3333,
+                "Longitude": -77.3333,
+                "Description": "industrial area"
+            },
+            "State": null,
+            "Province": null
+        },
+        "ReportType": "FNL",
+        "NumberOfVehicles": 2,
+        "NumberOfThirdParties": 1,
+        "NumberOfInjured": 0,
+        "IncidentId": "1111",
+        "Status": "Open",
+        "Statement": "When driving to the supermarket, I crashed into another car.",
+        "DamageAmount": 3000,
+        "DamageList": [
+            "left_front",
+            "right_back"
+        ],
+        "DamageType": "own_damage",
+        "Liability": 100,
+        "Cause": "collision",
+        "AmountReserved": 4000,
+        "ReportedDate": "2018-04-23T00:00:00",
+        "OccurredDate": "2018-04-23T00:00:00",
+        "ClaimId": "AUTOCLAIM-1",
+        "TimeOccurred": "13:00",
+        "TimeReported": null,
+        "PoliceInvolved": true,
+        "AmountClaimed": 4000
+       
+    },
+    "Branch": "private_nonlife",
+    "Label": "FRISS",
+    "Process": "claim_notification",
+    "ContactUserId": "user@example.com"
+}
