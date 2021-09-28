@@ -1,41 +1,61 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider, useSelector } from "react-redux";
-import { store, StoreState } from "./store";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
-import { Card } from "antd";
+import { RuleEditView } from "./views/editrules";
 
 import "antd/dist/antd.css";
 import "./assets/styles.css";
 
-import RuleBuilder from "./rulebuilder/builder";
+import { Link, Router, Switch, Route } from "react-router-dom";
+import { createBrowserHistory } from "history";
 
-const View: React.FunctionComponent<{}> = () => {
-  const rules = useSelector((s: StoreState) => s.rules.rules);
+const history = createBrowserHistory();
 
-  const l = Object.keys(rules).map((k) => {
-    return <div key={k}>{k}</div>;
-  });
-
+const Home: React.FunctionComponent<{}> = () => {
   return (
-    <div className="App flex-container">
-      <div className="main-menu">
-        <h1>Rule configuration</h1>
-        <h2>Rules:</h2>
-        <a>New rule</a>
-        <div>{l}</div>
-      </div>
-      <Card className="content-area">
-        <RuleBuilder />
-      </Card>
+    <div>
+      <h1>HOME</h1>
     </div>
+  );
+};
+
+const LayOut: React.FunctionComponent<{}> = () => {
+  return (
+    <Router history={history}>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <Link to="/">Home</Link>
+            </li>
+            <li>
+              <Link to="/ruledit">Rule editor</Link>
+            </li>
+            <li>
+              <Link to="/screening">Screening</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <Switch>
+        <Route path="/ruledit/:id">
+          <RuleEditView />
+        </Route>
+        <Route path="/">
+          <Home />
+        </Route>
+      </Switch>
+    </Router>
   );
 };
 
 const App: React.FunctionComponent<{}> = (props) => {
   return (
     <Provider store={store}>
-      <View />
+      <LayOut />
     </Provider>
   );
 };

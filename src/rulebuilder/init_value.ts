@@ -2,9 +2,25 @@ import { Utils as QbUtils } from "react-awesome-query-builder";
 
 export const newRuleId = () : string => QbUtils.uuid();
 
-export default { id: "9a99988a-0123-4456-b89a-b1607f326fd8", type: "group" };
+//export default { id: "9a99988a-0123-4456-b89a-b1607f326fd8", type: "group" };
 
-/*
+export const rule = {
+  "id": "9a99988a-0123-4456-b89a-b1607f326fd8",
+  "type": "group",
+  "children1": {
+    "99aa98bb-cdef-4012-b456-717c2c6995ac": {
+      "type": "rule",
+      "properties": {
+        "field": "ObjectsInsured.Vin",
+        "operator": "equal",
+        "value": ["asde"],
+        "valueSrc": ["value"],
+        "valueType": ["text"]
+      }
+    }
+  }
+}
+
 export default 
 {
   "type": "group",
@@ -64,4 +80,3 @@ export default
     "not": false
   }
 }
-*/

@@ -13,10 +13,13 @@ import {
 } from "react-awesome-query-builder";
 import throttle from "lodash/throttle";
 import loadedConfig from "./config_simple"; // <- you can try './config' for more complex examples
-import loadedInitValue from "./init_value";
+import { rule } from "./init_value";
 import loadedInitLogic from "./init_logic";
 
 import { loadRule, rules, storeRule } from "../storage/storage";
+import { JsonGroup } from "react-awesome-query-builder/lib";
+
+const loadedInitValue = rule;
 
 const stringify = JSON.stringify;
 const {
@@ -42,11 +45,14 @@ const preErrorStyle = {
 const emptyInitValue: JsonTree = { id: uuid(), type: "group" };
 
 // get init value in JsonTree format:
-const initValue: JsonTree =
-  loadedInitValue && Object.keys(loadedInitValue).length > 0
-    ? (loadedInitValue as JsonTree)
-    : emptyInitValue;
-const initTree: ImmutableTree = checkTree(loadTree(initValue), loadedConfig);
+//export const initValue: JsonTree =
+//  loadedInitValue && Object.keys(loadedInitValue).length > 0
+//    ? (loadedInitValue as JsonTree)
+//    : emptyInitValue;
+
+//console.log(initValue);
+
+//const initTree: ImmutableTree = checkTree(loadTree(initValue), loadedConfig);
 
 // -OR- alternativaly get init value in JsonLogic format:
 //const initLogic: JsonLogicTree = loadedInitLogic && Object.keys(loadedInitLogic).length > 0 ? loadedInitLogic : undefined;
@@ -57,36 +63,53 @@ interface DemoQueryBuilderState {
   config: Config;
 }
 
-export default class RuleBuilder extends Component<{}, DemoQueryBuilderState> {
+interface RuleBuilderProps {
+  rule: JsonGroup;
+}
+
+export default class RuleBuilder extends Component<
+  RuleBuilderProps,
+  DemoQueryBuilderState
+> {
   private immutableTree: ImmutableTree;
   private config: Config;
 
-  state = {
-    tree: initTree,
-    config: loadedConfig,
-  };
+  constructor(props: RuleBuilderProps) {
+    super(props);
 
-  render = () => (
-    <div>
-      <Query
-        {...loadedConfig}
-        value={this.state.tree}
-        onChange={this.onChange}
-        renderBuilder={this.renderBuilder}
-      />
+    const r = loadTree(props.rule);
 
-      <button onClick={this.resetValue}>reset</button>
-      <button onClick={this.clearValue}>clear</button>
+    this.state = {
+      tree: r,
+      config: loadedConfig,
+    };
+  }
 
-      <div className="query-builder-result">
-        {this.renderResult(this.state)}
+  render = () => {
+    console.log("render", this.state.tree);
+    return (
+      <div>
+        <Query
+          {...loadedConfig}
+          value={this.state.tree}
+          onChange={this.onChange}
+          renderBuilder={this.renderBuilder}
+        />
+
+        <button onClick={this.resetValue}>reset</button>
+        <button onClick={this.clearValue}>clear</button>
+        <button onClick={this.saveRule}>ok</button>
+
+        <div className="query-builder-result">
+          {this.renderResult(this.state)}
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   resetValue = () => {
     this.setState({
-      tree: initTree,
+      tree: checkTree(loadTree(this.props.rule), loadedConfig),
     });
   };
 
@@ -108,6 +131,12 @@ export default class RuleBuilder extends Component<{}, DemoQueryBuilderState> {
     </div>
   );
 
+  saveRule = () => {
+    const tree = this.immutableTree;
+    const jsonTree = getTree(tree);
+    storeRule(jsonTree.id, stringify(jsonTree));
+  };
+
   onChange = (immutableTree: ImmutableTree, config: Config) => {
     this.immutableTree = immutableTree;
     this.config = config;
@@ -118,13 +147,7 @@ export default class RuleBuilder extends Component<{}, DemoQueryBuilderState> {
     const jsonTree = getTree(immutableTree);
     const { logic, data, errors } = jsonLogicFormat(immutableTree, config);
 
-    storeRule(jsonTree.id, stringify(jsonTree))
-      .then((r) => {
-        loadRule(jsonTree.id)
-          .then((json) => console.info("loaded:", json))
-          .catch((e: Error) => console.error(e));
-      })
-      .catch((e: Error) => console.error(e));
+    //storeRule(jsonTree.id, stringify(jsonTree));
   };
 
   updateResult = throttle(() => {
