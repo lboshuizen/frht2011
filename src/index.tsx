@@ -1,5 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider, useSelector } from "react-redux";
+import { store, StoreState } from "./store";
 
 import { Card } from "antd";
 
@@ -8,39 +10,35 @@ import "./assets/styles.css";
 
 import RuleBuilder from "./rulebuilder/builder";
 
-function App() {
+const View: React.FunctionComponent<{}> = () => {
+  const rules = useSelector((s: StoreState) => s.rules.rules);
+
+  const l = Object.keys(rules).map((k) => {
+    return <div key={k}>{k}</div>;
+  });
+
   return (
     <div className="App flex-container">
       <div className="main-menu">
         <h1>Rule configuration</h1>
         <h2>Rules:</h2>
-        <div>
-          <h3>Rule 1</h3>
-          <p>Placeholder</p>
-        </div>
-        <div>
-          <h3>Rule 2</h3>
-          <p>Placeholder</p>
-        </div>
-        <div>
-          <h3>Rule 3</h3>
-          <p>Placeholder</p>
-        </div>
-        <div>
-          <h3>Rule 4</h3>
-          <p>Placeholder</p>
-        </div>
-        <div>
-          <h3>Rule 5</h3>
-          <p>Placeholder</p>
-        </div>
+        <a>New rule</a>
+        <div>{l}</div>
       </div>
       <Card className="content-area">
         <RuleBuilder />
       </Card>
     </div>
   );
-}
+};
+
+const App: React.FunctionComponent<{}> = (props) => {
+  return (
+    <Provider store={store}>
+      <View />
+    </Provider>
+  );
+};
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);

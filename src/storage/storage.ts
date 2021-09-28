@@ -1,5 +1,6 @@
-import { initializeApp, FirebaseApp } from "firebase/app";
-import { getStorage,ref, FirebaseStorage, StorageReference, uploadString, Strin'gFormat } from "firebase/storage";
+import { initializeApp } from "firebase/app";
+import { getStorage,ref, FirebaseStorage, StorageReference, uploadString, getDownloadURL, UploadResult, listAll, ListResult } from "firebase/storage";
+import { JsonGroup } from "react-awesome-query-builder";
 
 var firebaseConfig = {
     //apiKey: "API_KEY",
@@ -26,11 +27,25 @@ export function rules() : StorageReference {
     return ref(get_Storage(), "rules");
 }
 
-export function storeRule(id: string, json: string){
-    const rf = rules();
-    const fn = ref( rf, id);
-    uploadString(fn, json, "raw").then( (sn : any) => {
-        console.log("stored  to ", sn.metadata.fullPath);
-    })
-    .catch((e: Error) => console.error(e))
+export function listRules() : Promise<ListResult> {
+    const folder = rules();
+    return listAll(folder)
+}
+
+export async function loadRuleFromRef(ref: StorageReference) : Promise<JsonGroup> {
+    const url = await getDownloadURL(ref);
+    var content = await window.fetch(url,{mode: "cors"});
+    return content.json();
+}
+
+export async function loadRule(id: string) : Promise<JsonGroup> {
+    const folder = rules();
+    const fileRef = ref( folder, id);
+    return loadRuleFromRef(fileRef);
+}
+
+export function storeRule(id: string, json: string) : Promise<UploadResult> {
+    const folder = rules();
+    const fileRef = ref( folder, id);
+    return uploadString(fileRef, json, "raw");
 }

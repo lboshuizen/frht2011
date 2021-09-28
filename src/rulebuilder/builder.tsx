@@ -16,7 +16,7 @@ import loadedConfig from "./config_simple"; // <- you can try './config' for mor
 import loadedInitValue from "./init_value";
 import loadedInitLogic from "./init_logic";
 
-import { rules, storeRule } from "../storage/storage";
+import { loadRule, rules, storeRule } from "../storage/storage";
 
 const stringify = JSON.stringify;
 const {
@@ -118,7 +118,13 @@ export default class RuleBuilder extends Component<{}, DemoQueryBuilderState> {
     const jsonTree = getTree(immutableTree);
     const { logic, data, errors } = jsonLogicFormat(immutableTree, config);
 
-    storeRule(jsonTree.id, stringify(jsonTree));
+    storeRule(jsonTree.id, stringify(jsonTree))
+      .then((r) => {
+        loadRule(jsonTree.id)
+          .then((json) => console.info("loaded:", json))
+          .catch((e: Error) => console.error(e));
+      })
+      .catch((e: Error) => console.error(e));
   };
 
   updateResult = throttle(() => {
