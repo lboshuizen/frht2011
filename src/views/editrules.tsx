@@ -58,7 +58,8 @@ const View: React.FunctionComponent<{}> = () => {
     <div className="App flex-container">
       <div className="main-menu">
         <h1>Rule configuration</h1>
-        <h2>Rules:</h2>
+        <h2>Configured rules:</h2>
+        <small>Select a rule to configure it</small>
         <div>{ol}</div>
       </div>
       <Card className="content-area">
